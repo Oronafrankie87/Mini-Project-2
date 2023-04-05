@@ -111,6 +111,7 @@ footer {
 }
 
 .card-column {
+  display: flex;
   flex: 1 0 100%;
   padding: 1.5rem;
   transition: flex-basis 500ms linear;
@@ -183,6 +184,6 @@ footer {
 
   .card-column {
     flex: 0 0 33.333%;
-    mad-width: 33.333%;
+    max-width: 33.333%;
   }
 }
