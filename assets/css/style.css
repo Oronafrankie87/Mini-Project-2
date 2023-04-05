@@ -1,0 +1,188 @@
+:root {
+  --black: rgb(0, 0, 0);
+  --grey: #363636;
+  --white: #ffffff;
+  --highlight: #0000FF;
+}
+/* set content highlight color and background */
+::selection {
+  background-color: var(--highlight);
+  color: car(--black);
+}
+
+html {
+  /* set 1rem to topx instead of native 16px to make it easier to calculate font-size  values for the rest of the page(e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
+  font-size: 62.5%;
+}
+
+body {
+  /* Sans Serif font stack is implemented to help select the best font for eah type of computer operating system */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* set body font size to 1.75rem which is 1.75 more than the font-size of 10px, making it 17.5px. */
+  font-size: 1.75rem;
+  line-height: 1.5;
+  color: var(--white);
+  background-color: var(--grey);
+}
+
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  margin-bottom: 0.5rem;
+  color: var(--black); 
+  font-weight: 700;
+  line-height: 1.1;
+  
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+/* this affects the text inside the boxes that we can copy and paste. */
+
+code {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+  width: 96%;
+  margin: 0 auto;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+header h1.page-title {
+  padding: 1rem 1.2rem;
+  font-size: 4.5rem;
+}
+
+main {
+  width: 96%;
+  margin: 2rem auto;
+}
+
+footer {
+  margin: 1.5rem;
+  text-align: center;
+}
+
+/* code {
+  font-family: monospace;
+} */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.card-column {
+  flex: 1 0 100%;
+  padding: 1.5rem;
+  transition: flex-basis 500ms linear;
+  margin-bottom: 1.5rem;
+}
+
+.code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem;
+  color: var(--white);
+  outline: 2px dashed var(--white);
+  outline-offset: -2px;
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+  position: relative;
+  margin: -4rem 0 1.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--white);
+  color: var(--highlight);
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+  box-shadow: inset 0px 0px 8px blue, 0 0 15px maroon;
+}
+
+.code-card .code-block {
+  flex-grow: 1;
+}
+
+.code-card pre {
+  white-space: pre-wrap;
+  overflow: auto;
+  tab-size: 4;
+  padding: 1.2rem 1rem;
+  color: car(--highlight);
+  border-radius: 8px;
+  background-image: linear-gradient var(--blue) 0%, yellow 100%;
+  display: flex;
+  align-items: center;
+}
+
+.code-card pre:active {
+  user-select: all;
+}
+
+
+@media screen and (min-width: 768px) {
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .card-column:last-child {
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    width: 75%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    mad-width: 33.333%;
+  }
+}
